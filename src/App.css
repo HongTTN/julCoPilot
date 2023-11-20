@@ -1,0 +1,103 @@
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.doors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70vw;
+
+  margin: 0 auto; /* This will center your doors container */
+  background-image: url("https://images.unsplash.com/photo-1513297887119-d46091b24bfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");}
+
+.door {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  border-radius: 15px;
+  background: rgba(204, 204, 204, 0.4);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s linear;
+  border-radius: 15px; /* Add border-radius to make the corners rounded */
+}
+
+.door.open .front {
+  transform: rotateY(180deg);
+}
+
+.door.open .back {
+  transform: rotateY(0);
+}
+
+.front {
+  /* background: rgba(204, 204, 204, 0.05); */
+  transform: rotateY(0);
+}
+
+.back {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+.day {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+a {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 600px) {
+  .doors {
+    width: 70vw;
+  }
+
+  .door {
+    width: 20vw;
+    height: 20vw;
+    margin: 1vw;
+  }
+}
+
+/* Media query for screens larger than 900px */
+@media (min-width: 900px) {
+  .doors {
+    width: 60vw;
+  }
+
+  .door {
+    width: 15vw;
+    height: 15vw;
+    margin: 1vw;
+  }
+}
